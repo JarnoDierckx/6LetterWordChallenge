@@ -83,50 +83,5 @@ namespace _6LetterWordChallenge
                 }
             }
         }
-
-        /*public IEnumerable<string> FindWordCombinationsParallel()
-        {
-            var combinations = new List<string>();
-            var lockObj = new object();
-
-            Parallel.ForEach(_words, word =>
-            {
-                FindCombinations2(word, combinations, lockObj);
-            });
-
-            return combinations;
-        }
-
-        private void FindCombinations2(string startWord,  List<string> combinations, object lockObj, List<string> currentCombination = null, int lengthSoFar = 0)
-        {
-            if (currentCombination == null)
-            {
-                currentCombination = new List<string>();
-            }
-
-            foreach (var word in _words)
-            {
-                List<string> newCombination = new List<string>(currentCombination);
-                newCombination.Add(word);
-                int newLength = lengthSoFar + word.Length;
-
-                if (newLength == 6 && newCombination.Count >= 2)
-                {
-                    string combinedWord = string.Join("+", newCombination);
-                    if (_words.Contains(combinedWord) && !combinations.Contains(combinedWord))
-                    {
-                        lock (lockObj)
-                        {
-                            combinations.Add($"{combinedWord}={startWord}");
-                            Console.WriteLine($"{combinedWord}={startWord}");
-                        }
-                    }
-                }
-                else if (newLength < 6)
-                {
-                    FindCombinations2(startWord, combinations, lockObj, newCombination, newLength);
-                }
-            }
-        }*/
     }
 }
